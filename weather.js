@@ -120,7 +120,7 @@ function currentWeatherCard() {
 }
 
 searchBtn.addEventListener(`click`, onSubmit);
-homeBtn.addEventListener("click", refreshPage);
+
 
 // refresh the page
 function refreshPage() {
