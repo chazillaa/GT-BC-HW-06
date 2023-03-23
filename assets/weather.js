@@ -14,7 +14,7 @@ var windData;
 // get weather data when a city value is input into the search bar
 async function onSubmit() {
   // if statement to check if city input, check in, and check out all have values
-  if (cityInput.value !== "" && checkInInput.value !== "" && checkOutInput.value !== "") {
+  if (cityInput.value !== "") {
       // remove event listener to prevent duplicate elements
     searchBtn.removeEventListener("click", onSubmit);
     var weatherApi =
@@ -82,15 +82,6 @@ async function onSubmit() {
           });
       })
       .catch((err) => console.error(err));
-      // if else prompt a modal that asks for inputs to be filled
-  } else {
-    var modal = document.querySelector(".modal");
-    modal.style.display = "block";
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        location.reload();
-      }
-    };
   }
 }
 
@@ -119,16 +110,10 @@ function currentWeatherCard() {
   weatherDiv.append(currentDiv);
 }
 
-// remove jumbotron when search is made
-function removeJumbo() {
-  searchBtn.removeEventListener("click", removeJumbo);
-  var displayToggel = document.getElementById("display");
-  displayToggel.style.display = "none";
-}
+
 
 searchBtn.addEventListener(`click`, onSubmit);
-searchBtn.addEventListener(`click`, removeJumbo);
-homeBtn.addEventListener("click", refreshPage);
+
 
 // refresh the page
 function refreshPage() {
