@@ -110,10 +110,7 @@ function currentWeatherCard() {
   weatherDiv.append(currentDiv);
 }
 
-
-
 searchBtn.addEventListener(`click`, onSubmit);
-
 
 // refresh the page
 function refreshPage() {
