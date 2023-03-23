@@ -14,7 +14,7 @@ var windData;
 // get weather data when a city value is input into the search bar
 async function onSubmit() {
   // if statement to check if city input, check in, and check out all have values
-  if (cityInput.value) {
+  if (cityInput.value !== "") {
       // remove event listener to prevent duplicate elements
     searchBtn.removeEventListener("click", onSubmit);
     var weatherApi =
@@ -120,9 +120,3 @@ function currentWeatherCard() {
 }
 
 searchBtn.addEventListener(`click`, onSubmit);
-
-
-// refresh the page
-function refreshPage() {
-  location.reload();
-}
